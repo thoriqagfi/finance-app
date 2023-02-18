@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 
 export const links = [

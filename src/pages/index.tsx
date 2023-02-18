@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter, Jost } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import Layout from './layouts/Layout';
+import Layout from '../layouts/Layout';
 import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
 
