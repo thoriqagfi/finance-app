@@ -33,13 +33,13 @@ export default function Navbar() {
             <ul className='hidden font-medium space-x-6 md:flex lg:space-x-6 xl:space-x-20'>
               {links.map(({href, label}) => (
                 <li key={`${href}`}>
-                  <Link href={href} className='hover:text-gray-500'>{label}</Link>
+                  <Link href={href} className='hover:text-gray-500 nav'>{label}</Link>
                 </li>
               ))}
             </ul>
           </nav>
           <div className='hidden md:block'>
-            <Link href={'/'} className='bg-[#2A5EE4] text-white rounded-md px-3 py-2 text-center hover:bg-[#c4b5fd]'>
+            <Link href={'/'} className='bg-[#2A5EE4] text-white rounded-md px-3 py-2 text-center hover:bg-[#2a5fe4c4]'>
               Download App
             </Link>
           </div>

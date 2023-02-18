@@ -5,10 +5,9 @@ import styles from '@/styles/Home.module.css'
 import Layout from '../layouts/Layout';
 import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
+import Tilt from 'react-parallax-tilt';
 
 const inter = Inter({ subsets: ['latin'] });
-const jost = Jost({subsets: ['latin']});
-
 const achievementCards = [
   {
     key: 1,
@@ -84,10 +83,12 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div>
-                <div className='bg-[#EACB29] lg:w-[604px] lg:h-[604px] relative rounded-full lg:block hidden'></div>
-                <Image src={'/landing/hero-phone.png'} width={604} height={643} alt='phone' className='relative lg:-translate-y-full mt-[1px]'></Image>
-              </div>
+              <Tilt flipVertically={false}>
+                <div>
+                  <div className='bg-[#EACB29] lg:w-[604px] lg:h-[604px] relative rounded-full lg:block hidden'></div>
+                  <Image src={'/landing/hero-phone.png'} width={604} height={643} alt='phone' className='relative lg:-translate-y-full mt-[1px]'></Image>
+                </div>
+              </Tilt>
             </div>
           </section>
 
@@ -99,7 +100,8 @@ export default function Home() {
             <div className='flex justify-center xl:gap-x-10 cursor-pointer'>
               {
                 achievementCards.map(({key,image,background,title}) => (
-                  <div className='shadow-xl py-3 px-8 rounded-lg' key={key}>
+                  <Tilt key={key}>
+                  <div className='shadow-xl py-3 px-8 rounded-lg bg-white'>
                     <div className='flex pt-3'>
                       <div className={`bg-[${background}] bg-opacity-20 rounded-full my-auto p-2`}>
                         <Image src={image} width={22.5} height={22.5} alt='code'></Image>
@@ -110,6 +112,7 @@ export default function Home() {
                       “Transfer business money easily through <br /> finance app without any hassle. This app can <br /> help you control.Transfer business money <br /> easily through finance ”
                     </p>
                   </div>
+                  </Tilt>
                 ))
               }
             </div>
@@ -147,12 +150,14 @@ export default function Home() {
             <div className='flex justify-center mt-20 gap-x-6'>
               {
                 testimonialsCard.map(({key,image,name,position}) => (
-                  <div key={key} className='space-y-2 shadow-xl rounded-lg px-5 text-center py-5'>
-                    <Image src={image} width={80} height={80} alt={position} className='mx-auto'></Image>
-                    <p className='py-7 leading-relaxed'>Transfer business money easily through <br /> finance app without any hassle. This app can <br /> help you control.Transfer business money <br /> easily through finance </p>
-                    <p className='font-bold'>{name}</p>
-                    <p className=''>{position}</p>
-                  </div>
+                  <Tilt key={key}>
+                    <div className='space-y-2 shadow-xl rounded-lg px-5 text-center py-5 cursor-default'>
+                      <Image src={image} width={80} height={80} alt={position} className='mx-auto'></Image>
+                      <p className='py-7 leading-relaxed'>Transfer business money easily through <br /> finance app without any hassle. This app can <br /> help you control.Transfer business money <br /> easily through finance </p>
+                      <p className='font-bold'>{name}</p>
+                      <p className=''>{position}</p>
+                    </div>
+                  </Tilt>
                 ))
               }
             </div>
@@ -166,13 +171,14 @@ export default function Home() {
               <form action="/api/form" method='post' className='flex'>
                 <input 
                   type="email"
+                  placeholder='Enter your email address'
                   name="email"
                   pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
                   title='Email'
-                  className='mx-auto bg-white shadow-xl rounded-l-xl py-3 px-5 text-lg relative'
+                  className='mx-auto bg-white shadow-xl rounded-l-xl py-3 pl-5 pr-12 text-lg relative'
                 />
                 <div className='bg-white text-center py-3 rounded-r-xl px-6'>
-                  <button type="submit" className='relative px-4 rounded-lg py-2 bg-[#EACB29] font-medium text-sm'>Subscribe now</button>
+                  <button type="submit" className='relative px-4 rounded-lg py-2 bg-[#EACB29] hover:bg-[#eaca29cf] font-medium text-sm'>Subscribe now</button>
                 </div>
               </form>
 
