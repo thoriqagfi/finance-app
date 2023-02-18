@@ -33,7 +33,7 @@ export default function Navbar() {
             <ul className='hidden font-medium space-x-6 md:flex lg:space-x-6 xl:space-x-20'>
               {links.map(({href, label}) => (
                 <li key={`${href}`}>
-                  <Link href={href} className='hover:text-gray-500 nav'>{label}</Link>
+                  <Link href={href} className='hover:text-gray-500'>{label}</Link>
                 </li>
               ))}
             </ul>
