@@ -50,7 +50,7 @@ export default function Navbar() {
             isLoading={false}
             size='base'
             variant='blue'
-            href={'/form'}
+            href={'/signup'}
             isLink={true}
           >
             Login

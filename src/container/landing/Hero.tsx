@@ -32,7 +32,7 @@ export default function Hero() {
                   Transfer business money easily through finance app <br /> without any hassle. This app can help you control.
                 </p>
                 <Button
-                  href={{href: ''}}
+                  href='#achievements'
                   className={clsxm(
                     'relative z-10',
                     'flex mx-auto md:mx-0'
