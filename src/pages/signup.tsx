@@ -18,11 +18,8 @@ export default function Register() {
       password: '',
     }
   });
-  useEffect(() => {
-    methods.watch();
-  }, [methods])
   const { handleSubmit, formState: { errors }, watch } = methods;
-  const onSubmit = (data: InputFiles) => {
+  const onSubmit = () => {
     try {
       // const res = await fetch('/api/auth/signup', {
       //   method: 'POST',

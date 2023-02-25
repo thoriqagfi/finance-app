@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Button from '@/components/button/Button';
 export const links = [
   { href: '/', label: 'Home'},
-  { href: '/', label: 'Demos'},
-  { href: '/', label: 'About'},
-  { href: '/', label: 'Blog'},
-  { href: '/', label: 'Pages'},
-  { href: '/', label: 'Contact'},
+  { href: '/demos', label: 'Demos'},
+  { href: '/about', label: 'About'},
+  { href: '/blog', label: 'Blog'},
+  { href: '/pages', label: 'Pages'},
+  { href: '/contact', label: 'Contact'},
 ]
 
 export default function Navbar() {
