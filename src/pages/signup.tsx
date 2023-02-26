@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { InputFiles } from "typescript"
 import Input from "@/components/form/Input"
 import { InputProps } from "@/constant/form"
-import { FormProvider, useForm, useFormContext } from "react-hook-form"
+import { FormProvider, useForm } from "react-hook-form"
 import Button from "@/components/button/Button"
 import { useRouter } from "next/router"
 import clsxm from "@/constant/clsxm"
@@ -18,24 +18,7 @@ export default function Register() {
       password: '',
     }
   });
-  const { handleSubmit, formState: { errors }, watch } = methods;
-  const onSubmit = () => {
-    try {
-      // const res = await fetch('/api/auth/signup', {
-      //   method: 'POST',
-      //   body: JSON.stringify(data),
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   }
-      // });
-      // const json = await res.json();
-      // if (!res.ok) throw Error(json.message);
-      // console.log(json);
-      router.push('/login');
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const { handleSubmit, formState: { errors } } = methods;
 
   return (
     <>
@@ -65,7 +48,6 @@ export default function Register() {
                     message: "Name must have at least 4 characters",
                   },
                   maxLength: 20,
-                  shouldUnregister: true,
                 }}
               />
               <Input

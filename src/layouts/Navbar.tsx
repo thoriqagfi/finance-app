@@ -53,7 +53,7 @@ export default function Navbar() {
             href={'/signup'}
             isLink={true}
           >
-            Login
+            Sign Up
           </Button>
 
         </div>

@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import * as React from "react";
 import Button from "@/components/button/Button";
 
-export default function Login(req: Request, res: Response) {
+export default function Login() {
   const router = useRouter();
   const methods = useForm({
     mode: 'onChange',
@@ -14,7 +14,7 @@ export default function Login(req: Request, res: Response) {
       password: '',
     }
   });
-  const { handleSubmit, formState: { errors } } = methods;
+  const { handleSubmit, formState: {errors} } = methods;
   return (
     <>
       <div className="min-h-screen min-w-screen gradient-color">
@@ -23,7 +23,7 @@ export default function Login(req: Request, res: Response) {
             <form
               onSubmit={handleSubmit((data) => {
                 console.log(data);
-                router.push('/login');
+                router.push('/');
               })}
               className="shadow-xl px-16 py-24 bg-white rounded-lg"
             >

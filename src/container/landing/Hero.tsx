@@ -57,7 +57,7 @@ export default function Hero() {
                   'hidden md:block'
                 )}>
                   <Image src={'/landing/person.png'} width={51} height={51} alt='person' className=''></Image>
-                  <div className='mx-5 space-y-1.5'>
+                  <div className='mx-5 md:mx-0 mt-2'>
                     <h6 className='text-md font-semibold'>Thariq Agfi Hermawan</h6>
                     <p>From Sepuluh Nopemeber Institute of Technology</p>
                   </div>
