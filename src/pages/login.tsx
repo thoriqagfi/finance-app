@@ -3,6 +3,7 @@ import { FormProvider, useForm } from "react-hook-form"
 import { useRouter } from "next/router"
 import * as React from "react";
 import Button from "@/components/button/Button";
+import toast, { Toaster } from "react-hot-toast"
 
 export default function Login() {
   const router = useRouter();
@@ -18,11 +19,18 @@ export default function Login() {
   return (
     <>
       <div className="min-h-screen min-w-screen gradient-color">
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName="text-sm font-medium"
+        />
         <div className="flex justify-center items-center h-full">
           <FormProvider {...methods}>
             <form
               onSubmit={handleSubmit((data) => {
                 console.log(data);
+                toast.success('Login Successful!');
                 router.push('/');
               })}
               className="shadow-xl px-16 py-24 bg-white rounded-lg"

@@ -27,7 +27,7 @@ export default function Input({
           placeholder={placeholder}
           aria-describedby="id"
           className={clsxm(
-            'px-4 py-2 rounded',
+            'px-4 py-2 rounded text-black',
             error ? 'bg-red-100 focus:ring-red-500 border-red-500 focus:border-red-500'
             : 'bg-gray-100 focus:ring-green-500 border-none focus:border-green-500'
           )}

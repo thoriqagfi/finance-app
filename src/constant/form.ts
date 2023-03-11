@@ -9,3 +9,9 @@ export type InputProps = {
   type?: React.HTMLInputTypeAttribute;
   validation? : RegisterOptions;
 };
+
+export type Account = {
+  name: string;
+  email: string;
+  password: string;
+};

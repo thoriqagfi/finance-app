@@ -1,14 +1,18 @@
 import React, { useEffect } from "react"
-import { InputFiles } from "typescript"
 import Input from "@/components/form/Input"
-import { InputProps } from "@/constant/form"
+import { Account } from "@/constant/form"
 import { FormProvider, useForm } from "react-hook-form"
 import Button from "@/components/button/Button"
-import { useRouter } from "next/router"
 import clsxm from "@/constant/clsxm"
+import toast, { Toaster } from "react-hot-toast"
 
 export default function Register() {
-  const router = useRouter();
+  const notifySuccess = () => toast.success('Register Successful!');
+  const onSubmit = async (data: Account) => {
+      setIsRegistered(true)
+      setAccount(data.name)
+      notifySuccess()
+  }
   const methods = useForm({
     mode: 'onChange',
     reValidateMode: 'onChange',
@@ -19,21 +23,25 @@ export default function Register() {
     }
   });
   const { handleSubmit, formState: { errors } } = methods;
-
+  const [isRegistered, setIsRegistered] = React.useState<boolean>(false);
+  const [account, setAccount] = React.useState<string>('');
   return (
-    <>
-      <div className={clsxm(
-        'gradient-color',
-        'min-h-screen min-w-screen',
-      )}>
+    <div className={clsxm(
+      'gradient-color',
+      'min-h-screen min-w-screen',
+    )}>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName="text-sm font-medium"
+      />
+      { isRegistered == false ? (
         <div className="flex justify-center items-center space-y-3 h-full">
           <FormProvider {...methods}>
             <form
-              onSubmit={handleSubmit((data) => {
-                console.log(data)
-                router.push('/login')
-              })}
-              className="shadow-xl px-16 py-24 bg-white rounded-lg"
+              onSubmit={handleSubmit(onSubmit)}
+              className="shadow-xl px-32 py-24 bg-white rounded-lg"
               >
               <h1 className="text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Let us know!</h1>
               <Input
@@ -99,7 +107,23 @@ export default function Register() {
             </form>
           </FormProvider>
         </div>
+      ) : (
+      <div className="flex justify-center items-center space-y-3 h-full">
+        <div className="shadow-xl px-32 py-24 bg-white rounded-lg">
+          <h1 className="text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Register Successful!</h1>
+          <p className="text-black my-5">
+            Welcome to Finance App, <span className="font-bold">{account}</span>!
+          </p>
+          <Button
+            type="button"
+            href="/login"
+            isLink={true}
+          >
+            Login Here
+          </Button>
+        </div>
       </div>
-    </>
+      )}
+    </div>
   )
 }

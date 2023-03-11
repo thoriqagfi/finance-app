@@ -6,7 +6,7 @@ export const links = [
   { href: '/demos', label: 'Demos'},
   { href: '/about', label: 'About'},
   { href: '/blog', label: 'Blog'},
-  { href: '/pages', label: 'Pages'},
+  { href: '/jobs', label: 'Jobs'},
   { href: '/contact', label: 'Contact'},
 ]
 
