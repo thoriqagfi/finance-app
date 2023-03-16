@@ -1,6 +1,5 @@
 import { GET_JOBS } from "@/lib/api";
 import * as React from "react";
-import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdWork } from "react-icons/md";
 import { Jobs } from "@/types/jobs";
@@ -9,19 +8,12 @@ import Loading from "@/components/Loading";
 import Layout from "@/layouts/Layout";
 import { ApiResponse } from "@/types/jobs";
 import Button from "@/components/button/Button";
-const queryClient = new QueryClient();
-
-interface PaginationProps {
-  page: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
-  hasNextPage: boolean;
-}
 
 interface PaginationState {
   currentPage: number;
 }
 
-export default function Jobs() {
+export default function JobsData() {
   const [jobs, setJobs] = React.useState<Jobs[]>([]);
   const [search, setSearch] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(false);
