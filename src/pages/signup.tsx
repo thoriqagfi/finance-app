@@ -26,7 +26,9 @@ export default function Register() {
   const [isRegistered, setIsRegistered] = React.useState<boolean>(false);
   const [account, setAccount] = React.useState<string>('');
   return (
-    <div className={clsxm(
+    <div
+    data-testid="register-page"
+    className={clsxm(
       'gradient-color',
       'min-h-screen min-w-screen',
     )}>

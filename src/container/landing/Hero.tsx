@@ -5,7 +5,7 @@ import Tilt from "react-parallax-tilt"
 import Button from "../../components/button/Button"
 export default function Hero() {
   return (
-    <section id='hero' className='md:pt-48 pt-28 md:h-screen'>
+    <section id='hero' className='md:pt-48 pt-28 md:h-screen' data-testid="hero-section">
       <div className='md:flex w-full md:justify-around'>
         <div className="">
           <Tilt flipVertically={false}>

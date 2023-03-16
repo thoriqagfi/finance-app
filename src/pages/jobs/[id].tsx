@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Button from "@/components/button/Button";
-import Loading from "../Loading";
+import Loading from "@/components/Loading";
 
 
 export default function JobDetail() {

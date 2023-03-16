@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form"
 export default function Subscribe() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   return (
-    <section className='bg-[#2A5EE4] md:h-[80vh] flex justify-center'>
+    <section className='bg-[#2A5EE4] md:h-[80vh] flex justify-center' data-testid="subscribe-section">
       <div className='flex flex-col justify-center items-center md:space-y-10 py-10 md:py-0 space-y-6'>
         <h2 className='text-2xl md:text-4xl font-bold text-center text-white'>Get latest case studies</h2>
         <p className='text-[#A3A3A3] text-sm md:text-lg text-center'>Transfer business money easily through finance app without <br /> any hassle. This app can help you control.Transfer business <br /> money easily through finance </p>

@@ -18,7 +18,7 @@ export default function Login() {
   const { handleSubmit, formState: {errors} } = methods;
   return (
     <>
-      <div className="min-h-screen min-w-screen gradient-color">
+      <div className="min-h-screen min-w-screen gradient-color" data-testid="login-page">
         <Toaster
           position="top-center"
           reverseOrder={false}
@@ -37,6 +37,7 @@ export default function Login() {
             >
               <h1 className="text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Login</h1>
               <Input
+                data-testid='email'
                 id='email'
                 label="Email"
                 placeholder="Enter your email"
@@ -50,6 +51,7 @@ export default function Login() {
                 }}
               />
               <Input
+                data-testid='password'
                 id='password'
                 label="Password"
                 placeholder="Enter your password"

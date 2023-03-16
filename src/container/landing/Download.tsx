@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Download() {
   return (
-    <section id='download-app' className='h-full md:h-[30vh] md:flex justify-evenly items-center'>
+    <section id='download-app' className='h-full md:h-[30vh] md:flex justify-evenly items-center' data-testid="download-section">
       <div>
         <h2 className='text-[30px] font-bold text-center md:text-left'>Download our mobile app</h2>
         <p className='text-sm text-center md:text-left md:text-[16px] leading-relaxed text-[#232323]'>Transfer business money easily through finance app without any hassle. <br /> This app can help you control.Transfer business money easily through <br /> finance</p>

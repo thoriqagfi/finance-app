@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function Features() {
   return (
     <>
-    <section id='features-1' className='h-full'>
+    <section id='features-1' className='h-full' data-testid="features-section">
       {/* Feature 1 */}
       <div className='lg:flex justify-center bg-[#0C225B] md:h-[50vh] md:mt-32 lg:gap-x-20 py-2 md:py-0 mt-6'>
         <div className='relative z-0 bg-[#2AA1E4] h-[503px] w-[503px] rounded-full mt-16 mx-auto'>
